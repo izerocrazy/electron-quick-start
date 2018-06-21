@@ -17,6 +17,12 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^2.0.0"
+    "electron": "~1.7.8"
+  },
+  "dependencies": {
+    "fullcalendar": "^3.8.0",
+    "fullcalendar-scheduler": "^1.9.1",
+    "jquery": "^3.2.1",
+    "moment": "^2.20.1"
   }
 }

@@ -1,19 +1,66 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <link rel="stylesheet" href="./bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./build/fullcal/fullcalendar.css" media="screen">
+    <script>window.$ = window.jQuery = require('./build/jquery.min.js');</script>
+    <script src="./build/moment.min.js"></script>
+    <script src="./build/react.js"></script>
+    <script src="./build/react-dom.js"></script>
+    <script src="./build/browser.min.js"></script>
+    <script src="./build/JSXTransformer.js"></script>
+    <script src="./build/Pubsub.js"></script>
+    <script src="./build/fullcal/fullcalendar.min.js"></script>
+    <script src="./build/layer/layer.js"></script>
+<style>
+ #calendar {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+</style>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
-
     <script>
-      // You can also require other files to run in this process
-      require('./renderer.js')
+        require('./renderer.js')
     </script>
+    <script type="text/jsx" src="./components/AllEvent.js">
+    </script>
+    <script type="text/jsx" src="./components/AllEventType.js">
+    </script>
+    <script type="text/jsx" src="./components/CountDown.js">
+    </script>
+    <script type="text/jsx" src="./components/PlayerInfo.js">
+    </script>
+    <script type="text/jsx">
+ReactDOM.render(
+    <AllEventType />,
+    document.getElementById('navbar-main')
+);
+ReactDOM.render(
+    <AllEvent />,
+    document.getElementById('AllEventTable')
+);
+ReactDOM.render(
+    <PlayerInfo />,
+    document.getElementById('PlayerInfo')
+);
+    </script>
+
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-collapse collapse" id="navbar-main">
+            </div>
+        </div>
+    </div>
+
+		<div class="page-header">
+		</div>
+        <div class="container"> 
+            <div id="PlayerInfo">
+            </div>
+            <div id="CountDown"></div>
+            <div id='calendar'></div>
+            <div id="AllEventTable"></div>
+		</div>
   </body>
 </html>
